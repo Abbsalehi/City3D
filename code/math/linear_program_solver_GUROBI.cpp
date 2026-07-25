@@ -39,10 +39,12 @@ bool LinearProgramSolver::_solve_GUROBI(const LinearProgram* program) {
 		}
 
 		static GRBEnv env = GRBEnv();
-		env.set(GRB_IntParam_LogToConsole, 0);
+		// env.set(GRB_IntParam_LogToConsole, 0);
+		env.set(GRB_IntParam_LogToConsole, 1);
 
 		GRBModel model = GRBModel(env);
         model.set(GRB_DoubleParam_TimeLimit, 600.0); // time limit of 10 minutes
+		model.set(GRB_IntParam_Threads, 8); // Uses 8 threads instead of 1
 
 		// create variables
 		std::vector<GRBVar> X(variables.size());

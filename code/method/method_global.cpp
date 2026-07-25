@@ -17,7 +17,8 @@ namespace Method
     double degenerate_face_area_threshold = 1e-8;
 
     //we don't have a solver to handle cases with too many candidate faces
-    int max_allowed_candidate_faces = 30000;
+    //int max_allowed_candidate_faces = 30000;
+	int max_allowed_candidate_faces = 30000;
 
 	//________________ names for various quality measures ____________________
 

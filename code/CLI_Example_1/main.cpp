@@ -31,14 +31,18 @@ int main(int argc, char **argv)
     Method::min_points = 40;
     Method::pixel_size = 0.15;
 
-    const std::string directory = std::string(CITY3D_ROOT_DIR) + "/../data/";
+    const std::string directory = std::string(CITY3D_ROOT_DIR) + "/../Create_LoD2/";
 
     // input point cloud file name
-    const std::string input_cloud_file = directory + "002.ply";
+    //const std::string input_cloud_file = directory + "002.ply";
+    const std::string input_cloud_file = directory + "nb_2015_2489000_7438000.ply";
+
     // input footprint file name
-    const std::string input_footprint_file = directory + "002_footprint.obj";
+    //const std::string input_footprint_file = directory + "002_footprint.obj";
+    const std::string input_footprint_file = directory + "footprint.geojson";
+
     // output mesh file name
-    const std::string output_file = directory + "002_result.obj";
+    const std::string output_file = directory + "nb_2015_2489000_7438000_result.obj";
 
     // load input point cloud
     std::cout << "loading input point cloud data from file: " << input_cloud_file << std::endl;

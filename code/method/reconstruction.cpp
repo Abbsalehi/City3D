@@ -748,6 +748,8 @@ Map *Reconstruction::reconstruct_single_building(PointSet *roof_pset,
     // generate candidate faces
     PolyFitInfo polyfit_info;
     Map *hypothesis = hypo.generate(&polyfit_info, footprint, line_segments);
+    std::cout << "\t\tcandidate faces: " << hypothesis->size_of_facets() << std::endl;
+
     if (!hypothesis) {
         if (!save_footprint(footprint, roof_pset->offset(), footprint_file_name))
             Logger::err("-") << "failed to save footprint as mesh into file: " << footprint_file_name << std::endl;
